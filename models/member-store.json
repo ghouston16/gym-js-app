@@ -32,6 +32,26 @@
           "upperarm": 0,
           "waist": 0,
           "hips": 0
+        },
+        {
+          "id": "07c98050-e636-11ea-8c24-d5359a293d57",
+          "date": "08/24/2020",
+          "weight": 0,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0
+        },
+        {
+          "id": "09496990-e636-11ea-8c24-d5359a293d57",
+          "date": "08/24/2020",
+          "weight": 0,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0
         }
       ]
     },
@@ -64,28 +84,19 @@
           "thigh": 0,
           "waist": 0,
           "hips": 0
-        },
-        {
-          "id": "73ecc6f0-e408-11ea-8189-4547fc06e8c1",
-          "date": "08/22/2020",
-          "weight": 0,
-          "chest": 0,
-          "upperarm": 0,
-          "thigh": 0,
-          "waist": 0,
-          "hips": 0
-        },
-        {
-          "id": "754aa940-e408-11ea-8189-4547fc06e8c1",
-          "date": "08/22/2020",
-          "weight": 0,
-          "chest": 0,
-          "upperarm": 0,
-          "thigh": 0,
-          "waist": 0,
-          "hips": 0
         }
       ]
+    },
+    {
+      "id": "67aa54e0-e636-11ea-8c24-d5359a293d57",
+      "email": "bt@wit.ie",
+      "firstName": "bt",
+      "lastName": "sport",
+      "password": "secret",
+      "gender": "Male",
+      "height": "",
+      "startingWeight": "",
+      "assessments": []
     }
   ]
 }

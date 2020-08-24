@@ -39,7 +39,7 @@ const dashboard = {
     };
     logger.debug("Creating a new member", newMember);
     memberStore.addMember(newMember);
-    response.redirect("/dashboard");
+    response.redirect("/login");
   }
 };
 
