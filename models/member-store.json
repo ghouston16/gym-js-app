@@ -32,27 +32,6 @@
           "upperarm": 0,
           "waist": 0,
           "hips": 0
-        },
-        {
-          "id": "800d6ab0-e3ff-11ea-8610-d93966aca145",
-          "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-          "date": "08/21/2020",
-          "weight": 0,
-          "chest": 0,
-          "thigh": 0,
-          "upperarm": 0,
-          "waist": 0,
-          "hips": 0
-        },
-        {
-          "id": "acdfe600-e407-11ea-a63a-db02dd98b403",
-          "date": "08/22/2020",
-          "weight": 70,
-          "chest": 0,
-          "upperarm": 0,
-          "thigh": 0,
-          "waist": 0,
-          "hips": 0
         }
       ]
     },

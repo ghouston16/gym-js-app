@@ -3,12 +3,13 @@
 const logger = require("../utils/logger");
 const memberStore = require("../models/member-store");
 const uuid = require("uuid");
+const accounts = require ('./accounts.js');
 
 const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
     const viewData = {
-      title: "member Dashboard",
+      title: "Dashboard",
       members: memberStore.getAllMembers()
     };
     logger.info("about to render", memberStore.getAllMembers());
@@ -23,6 +24,7 @@ const dashboard = {
   },
 
   addMember(request, response) {
+    const loggedInUser = accounts.getCurrentUser(request);
     const newMember = {
       id: uuid.v1(),
       email: request.body.email,

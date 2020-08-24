@@ -44,7 +44,13 @@ const memberStore = {
     const assessments = member.assessments;
     _.remove(assessments, { id: assessmentId });
     this.store.save();
-  }
+  },
+  getUserByEmail(email) {
+    return this.store.findOneBy(this.collection, { email: email });
+  },
+  getUserMember(userid) {
+    return this.store.findBy(this.collection, { userid: userid });
+  },
 };
 
 module.exports = memberStore;
