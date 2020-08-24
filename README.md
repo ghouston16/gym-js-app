@@ -1,4 +1,4 @@
-Welcome to the Playlist 3
+Welcome to the PlayGym
 =========================
 
-Version 3 of the Playlist application
+A Gym Tracker
