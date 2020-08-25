@@ -57,7 +57,7 @@ const utility = {
 
         let weight = loggedInUser.startingWeight;
         const height = loggedInUser.height;
-        const gender = loggedInUser.gender;
+        const gender = loggedInUser.gender.substring(0, 0);
         const assessment = loggedInUser.assessments;
         const lastassessment = assessment[0]
 
@@ -68,7 +68,7 @@ const utility = {
 
         let base = null;
 
-        if (gender === "M") {
+        if ((gender === "M")||(gender === "m")) {
             base = 50
         } else {
             base = 45.5
