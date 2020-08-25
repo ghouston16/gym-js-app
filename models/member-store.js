@@ -32,12 +32,25 @@ const memberStore = {
     this.store.removeAll(this.collection);
     this.store.save();
   },
+  getAssessment(id) {
+    const test = this.store.findOneBy(this.collection, { id: id });
+    return this.store.findOneBy('memberStore.assessments', { id: id });
+  },
+
 
   addAssessment(id, assessment) {
     const member = this.getMember(id);
-    member.assessments.push(assessment);
+    member.assessments.unshift(assessment);
     this.store.save();
   },
+  addComment(id, memberId, comment) {
+    const user = this.getMember(memberId)
+    const assessment = user.assessments;
+    const update = assessment.map(i=> i.id).indexOf(id);
+    assessment[update].comments = comment;
+    this.store.save();
+  },
+
 
   removeAssessment(id, assessmentId) {
     const member = this.getMember(id);
@@ -48,8 +61,14 @@ const memberStore = {
   getUserByEmail(email) {
     return this.store.findOneBy(this.collection, { email: email });
   },
-  getUserMember(userid) {
-    return this.store.findBy(this.collection, { userid: userid });
+  updateSettings(member, updatedMember){
+    member.firstName = updatedMember.firstName;
+    member.lastName = updatedMember.lastName;
+    member.email = updatedMember.email;
+    member.password = updatedMember.password;
+    member.address = updatedMember.address;
+    member.gender = updatedMember.gender;
+    this.store.save();
   },
 };
 

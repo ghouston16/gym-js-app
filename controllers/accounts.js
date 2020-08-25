@@ -1,9 +1,11 @@
 'use strict';
 
+const _ = require('lodash');
 const userstore = require('../models/user-store');
 const memberStore = require('../models/member-store');
 const logger = require('../utils/logger');
 const uuid = require('uuid');
+const moment = require('moment')
 
 const accounts = {
 
@@ -34,26 +36,26 @@ const accounts = {
     },
 
     register(request, response) {
-        const user = request.body;
-        user.id = uuid.v1();
-        userstore.addUser(user);
-        logger.info(`registering ${user.email}`);
+        const member = request.body;
+        member.id = uuid.v1();
+        member.assessments = [];
+        memberStore.addMember(member);
+        logger.info(`registering ${member.email}`);
         response.redirect('/');
     },
 
     authenticate(request, response) {
         const user = userstore.getUserByEmail(request.body.email);
         const member = memberStore.getUserByEmail(request.body.email);
-        if (user) {
-            response.cookie('member', user.email);
+        if  (user != undefined && request.body.password === user.password) {
+            response.cookie('trainer', user);
             logger.info(`logging in ${user.email}`);
-            response.redirect('/dashboard');
-        }
-        else if (member){
+            response.redirect('/trainerdashboard');
+    }
+        else if (member !== undefined && request.body.password === member.password) {
                 response.cookie('member', member.email);
                 logger.info(`logging in ${member.email}`);
-                response.redirect('/member/' + member.id);
-
+                response.redirect('/dashboard/' + member.id);
             }
          else {
             response.redirect('/login');
@@ -62,7 +64,7 @@ const accounts = {
 
     getCurrentUser(request) {
         const userEmail = request.cookies.member;
-        return userstore.getUserByEmail(userEmail);
+        return memberStore.getUserByEmail(userEmail);
     },
 };
 

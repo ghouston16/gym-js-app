@@ -3,9 +3,9 @@
 const express = require("express");
 const router = express.Router();
 
-const dashboard = require("./controllers/dashboard.js");
+const trainerdashboard = require("./controllers/trainerdashboard.js");
 const about = require("./controllers/about.js");
-const member = require("./controllers/member.js");
+const dashboard = require("./controllers/dashboard.js");
 const accounts = require('./controllers/accounts.js');
 
 router.get('/', accounts.index);
@@ -15,14 +15,19 @@ router.get('/logout', accounts.logout);
 router.post('/register', accounts.register);
 router.post('/authenticate', accounts.authenticate);
 
-router.get("/", dashboard.index);
-router.get("/dashboard", dashboard.index);
-router.get("/dashboard/deletemember/:id", dashboard.deleteMember);
-router.post("/dashboard/addmember", dashboard.addMember);
+router.get("/", trainerdashboard.index);
+router.get("/trainerdashboard", trainerdashboard.index);
+router.get("/trainerdashboard/deletemember/:id", trainerdashboard.deleteMember);
+router.post("/trainerdashboard/addmember", trainerdashboard.addMember);
+router.get('/trainerdashboard/:id', trainerdashboard.trainerAssessment);
+router.post('/editcomment/:id', trainerdashboard.editComment);
+router.post("/member/updatesettings/:id", dashboard.update);
+
+
 
 router.get("/about", about.index);
-router.get("/member/:id", member.index);
-router.get("/member/:id/deleteassessment/:assessmentid", member.deleteAssessment);
-router.post("/member/:id/addassessment", member.addAssessment);
+router.get("/dashboard/:id", dashboard.index);
+router.get("/dashboard/:id/deleteassessment/:assessmentid", dashboard.deleteAssessment);
+router.post("/dashboard/:id/addassessment", dashboard.addAssessment);
 
 module.exports = router;

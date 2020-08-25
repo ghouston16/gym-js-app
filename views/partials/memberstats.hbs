@@ -1,0 +1,30 @@
+<section class="ui raised segment stackable four column grid">
+    <div class="column center aligned">
+        <h2 class="ui icon header">
+            <i class="blue user icon"></i>
+            <div class="sub header"><b>{{member.firstName}} {{member.lastName}}</b></div>
+        </h2>
+    </div>
+    <div class="column center aligned">
+        <h2 class="ui icon header">
+            <i class="heartbeat red icon">{{bmi.bmi}}</i>
+            <div class="sub header"><b>BMI</b></div>
+        </h2>
+    </div>
+    <div class="column center aligned">
+        <h2 class="ui icon header">
+            <i class="green plus icon"></i>
+            <div class="sub header"><b>{{bmi.bmicategory}}</b></div>
+        </h2>
+    </div>
+    <div class="column center aligned">
+        <h2 class="ui icon header">
+            {{#if idealweight}}
+                <i class= "huge green balance scale icon"></i>
+            {{else}}
+                <i class= "huge red balance scale icon"></i>
+            {{/if}}
+            <div class="sub header"><b>Ideal Weight Indicator</b></div>
+        </h2>
+    </div>
+</section>

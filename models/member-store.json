@@ -12,41 +12,9 @@
       "startingWeight": "80",
       "assessments": [
         {
-          "id": "961e6080-e3f4-11ea-9d67-216b47928eca",
-          "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-          "date": "08/21/2020",
-          "weight": 0,
-          "chest": 0,
-          "thigh": 0,
-          "upperarm": 0,
-          "waist": 0,
-          "hips": 0
-        },
-        {
-          "id": "9e956e20-e3f4-11ea-9d67-216b47928eca",
-          "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-          "date": "08/21/2020",
-          "weight": 636,
-          "chest": 0,
-          "thigh": 0,
-          "upperarm": 0,
-          "waist": 0,
-          "hips": 0
-        },
-        {
-          "id": "07c98050-e636-11ea-8c24-d5359a293d57",
-          "date": "08/24/2020",
-          "weight": 0,
-          "chest": 0,
-          "upperarm": 0,
-          "thigh": 0,
-          "waist": 0,
-          "hips": 0
-        },
-        {
-          "id": "09496990-e636-11ea-8c24-d5359a293d57",
-          "date": "08/24/2020",
-          "weight": 0,
+          "id": "fb720650-e708-11ea-8a17-67805836db4d",
+          "date": "08/25/2020",
+          "weight": 67,
           "chest": 0,
           "upperarm": 0,
           "thigh": 0,
@@ -54,49 +22,6 @@
           "hips": 0
         }
       ]
-    },
-    {
-      "id": "6e898900-e408-11ea-8189-4547fc06e8c1",
-      "email": "g@home.ie",
-      "firstName": "Gary",
-      "lastName": "Houston",
-      "password": "secret",
-      "gender": "male",
-      "height": "",
-      "startingWeight": "",
-      "assessments": [
-        {
-          "id": "71b9ba50-e408-11ea-8189-4547fc06e8c1",
-          "date": "08/22/2020",
-          "weight": 0,
-          "chest": 0,
-          "upperarm": 0,
-          "thigh": 0,
-          "waist": 0,
-          "hips": 0
-        },
-        {
-          "id": "7251dba0-e408-11ea-8189-4547fc06e8c1",
-          "date": "08/22/2020",
-          "weight": 0,
-          "chest": 0,
-          "upperarm": 0,
-          "thigh": 0,
-          "waist": 0,
-          "hips": 0
-        }
-      ]
-    },
-    {
-      "id": "67aa54e0-e636-11ea-8c24-d5359a293d57",
-      "email": "bt@wit.ie",
-      "firstName": "bt",
-      "lastName": "sport",
-      "password": "secret",
-      "gender": "Male",
-      "height": "",
-      "startingWeight": "",
-      "assessments": []
     }
   ]
 }
