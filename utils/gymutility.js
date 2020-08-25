@@ -16,7 +16,7 @@ const utility = {
         if (assessment != "") {
             weight = lastassessment.weight;
         }
-        const height = loggedInUser.height;
+        const height = (loggedInUser.height/100);
         const bmi = (weight / (height * height)).toFixed(2);
         let bmicategory = null;
 

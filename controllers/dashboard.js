@@ -48,7 +48,7 @@ const dashboard = {
             thigh: Number(request.body.thigh),
             waist: Number(request.body.waist),
             hips: Number(request.body.hips),
-            comment: ""
+            comment: request.body.comment
         };
         logger.debug("New Assessment = ", newAssessment);
         memberStore.addAssessment(memberId, newAssessment);

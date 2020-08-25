@@ -8,18 +8,55 @@
       "password": "secret",
       "address": "Hope Road",
       "gender": "Male",
-      "height": "2",
+      "height": "170",
       "startingWeight": "80",
       "assessments": [
         {
-          "id": "fb720650-e708-11ea-8a17-67805836db4d",
+          "id": "a4fbcc80-e71b-11ea-b784-a7a8aed92e2a",
           "date": "08/25/2020",
-          "weight": 67,
+          "weight": 0,
           "chest": 0,
           "upperarm": 0,
           "thigh": 0,
           "waist": 0,
-          "hips": 0
+          "hips": 0,
+          "comment": "",
+          "comments": "Good job"
+        },
+        {
+          "id": "a30e5460-e71b-11ea-b784-a7a8aed92e2a",
+          "date": "08/25/2020",
+          "weight": 0,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "comment": ""
+        }
+      ]
+    },
+    {
+      "id": "9306b370-e719-11ea-acda-91fe8ba9e4ab",
+      "email": "lena@home.ie",
+      "firstName": "Lena",
+      "lastName": "Taleghani",
+      "password": "secret",
+      "gender": "female",
+      "height": "157",
+      "startingWeight": "64",
+      "assessments": [
+        {
+          "id": "b36a0590-e719-11ea-acda-91fe8ba9e4ab",
+          "date": "08/25/2020",
+          "weight": 70,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "comment": "",
+          "comments": "67"
         }
       ]
     }
