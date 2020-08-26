@@ -67,13 +67,6 @@ const accounts = {
          const viewData ={
              loggedInUser
          }
-
-      /*  const genderboolean = (loggedInUser.gender === 'F' || loggedInUser.gender === 'Female') ? true : false
-
-        loggedInUser.gender = (loggedInUser.gender === 'F' || loggedInUser.gender === 'Female') ? 'Female' : 'Male'
-
-*/
-
         response.render('settings', viewData);
     },
 
