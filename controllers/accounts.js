@@ -61,7 +61,34 @@ const accounts = {
             response.redirect('/login');
         }
     },
+    settings(request, response) {
+        const userEmail = request.cookies.member;
+        let  loggedInUser = accounts.getCurrentUser(request);
+         const viewData ={
+             loggedInUser
+         }
 
+      /*  const genderboolean = (loggedInUser.gender === 'F' || loggedInUser.gender === 'Female') ? true : false
+
+        loggedInUser.gender = (loggedInUser.gender === 'F' || loggedInUser.gender === 'Female') ? 'Female' : 'Male'
+
+*/
+
+        response.render('settings', viewData);
+    },
+
+    update(request, response) {
+
+        const loggedInUser = accounts.getCurrentUser(request);
+        const update = request.body;
+
+        if (update.password != "" || update.address != "") {
+            memberStore.updateSettings(loggedInUser, update)
+        }
+
+        response.redirect('/dashboard/:id')
+
+    },
     getCurrentUser(request) {
         const userEmail = request.cookies.member;
         return memberStore.getUserByEmail(userEmail);

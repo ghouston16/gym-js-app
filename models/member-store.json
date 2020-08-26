@@ -6,35 +6,56 @@
       "firstName": "Bob",
       "lastName": "Marley",
       "password": "secret",
-      "address": "Hope Road",
+      "address": "8 Home",
       "gender": "Male",
       "height": "170",
       "startingWeight": "80",
       "assessments": [
         {
-          "id": "a4fbcc80-e71b-11ea-b784-a7a8aed92e2a",
-          "date": "08/25/2020",
-          "weight": 0,
+          "id": "5ece0f60-e73f-11ea-94a0-a167c31c000f",
+          "date": "08/26/2020",
+          "weight": 440,
           "chest": 0,
           "upperarm": 0,
           "thigh": 0,
           "waist": 0,
           "hips": 0,
-          "comment": "",
-          "comments": "Good job"
+          "trend": true
         },
         {
-          "id": "a30e5460-e71b-11ea-b784-a7a8aed92e2a",
-          "date": "08/25/2020",
-          "weight": 0,
+          "id": "5b44c190-e73f-11ea-94a0-a167c31c000f",
+          "date": "08/26/2020",
+          "weight": 67,
           "chest": 0,
           "upperarm": 0,
           "thigh": 0,
           "waist": 0,
           "hips": 0,
-          "comment": ""
+          "trend": true
+        },
+        {
+          "id": "5709aff0-e73f-11ea-94a0-a167c31c000f",
+          "date": "08/26/2020",
+          "weight": 70,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "trend": true
+        },
+        {
+          "id": "7a62aa20-e739-11ea-bdbe-054823780139",
+          "date": "08/26/2020",
+          "weight": 80,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0
         }
-      ]
+      ],
+      "_locals": {}
     },
     {
       "id": "9306b370-e719-11ea-acda-91fe8ba9e4ab",

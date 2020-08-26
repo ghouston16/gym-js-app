@@ -61,15 +61,11 @@ const memberStore = {
   getUserByEmail(email) {
     return this.store.findOneBy(this.collection, { email: email });
   },
-  updateSettings(member, updatedMember){
-    member.firstName = updatedMember.firstName;
-    member.lastName = updatedMember.lastName;
-    member.email = updatedMember.email;
-    member.password = updatedMember.password;
-    member.address = updatedMember.address;
-    member.gender = updatedMember.gender;
-    this.store.save();
-  },
+  updateSettings(member, update){
+      if(update.password !="") member.password = update.password;
+      if(update.address !="") member.address = update.address;
+      this.store.save();
+    },
 };
 
 module.exports = memberStore;

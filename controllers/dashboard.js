@@ -33,12 +33,16 @@ const dashboard = {
     addAssessment(request, response) {
         const memberId = request.params.id;
         const member = memberStore.getMember(memberId);
+        let trend = false;
         //TODO use moment or other tidier method for date - method from Stack-Overflow
-        var today = new Date();
-        var dd = String(today.getDate()).padStart(2, "0");
-        var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
-        var yyyy = today.getFullYear();
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, "0");
+        let mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+        let yyyy = today.getFullYear();
         today = mm + "/" + dd + "/" + yyyy;
+        if (member.assessments != null){
+            trend = member.assessments[0] > request.body.weight
+        }
         const newAssessment = {
             id: uuid.v1(),
             date: today,
@@ -48,6 +52,7 @@ const dashboard = {
             thigh: Number(request.body.thigh),
             waist: Number(request.body.waist),
             hips: Number(request.body.hips),
+            trend: trend,
             comment: request.body.comment
         };
         logger.debug("New Assessment = ", newAssessment);
