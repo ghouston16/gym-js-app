@@ -38,21 +38,7 @@ const utility = {
             bmicategory
         };
     },
-
- /*   goal(loggedInUser) {
-        let goal = loggedInUser.goals.filter(date => (date.date))
-        if(goal !=""){
-            goal = _.sortBy(goal, function(o) {
-                return new moment(o.date)
-            }).reverse();
-
-            return goal[0].status
-        }else{
-
-            return
-        }
-    },
-*/
+    
     idealweight(loggedInUser, idealweight) {
 
         let weight = loggedInUser.startingWeight;
@@ -82,12 +68,5 @@ const utility = {
             return false
         }
     },
-
- /*   goalstatus() {
-
-
-    },
-
-*/
 };
 module.exports = utility;
