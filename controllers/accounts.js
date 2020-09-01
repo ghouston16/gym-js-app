@@ -39,6 +39,7 @@ const accounts = {
         const member = request.body;
         member.id = uuid.v1();
         member.assessments = [];
+        member.goals = [];
         memberStore.addMember(member);
         logger.info(`registering ${member.email}`);
         response.redirect('/');
@@ -75,7 +76,7 @@ const accounts = {
         const loggedInUser = accounts.getCurrentUser(request);
         const update = request.body;
 
-        if (update.password != "" || update.address != "") {
+        if (update.password !== "" || update.address !== "") {
             memberStore.updateSettings(loggedInUser, update)
         }
 

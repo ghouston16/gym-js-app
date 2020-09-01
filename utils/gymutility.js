@@ -43,7 +43,7 @@ const utility = {
 
         let weight = loggedInUser.startingWeight;
         const height = loggedInUser.height;
-        const gender = loggedInUser.gender.substring(0, 0);
+        const gender = loggedInUser.gender;
         const assessment = loggedInUser.assessments;
         const lastassessment = assessment[0]
 

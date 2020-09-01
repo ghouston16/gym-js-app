@@ -6,56 +6,35 @@
       "firstName": "Bob",
       "lastName": "Marley",
       "password": "secret",
-      "address": "8 Home",
+      "address": "New House",
       "gender": "Male",
       "height": "170",
       "startingWeight": "80",
       "assessments": [
         {
-          "id": "5ece0f60-e73f-11ea-94a0-a167c31c000f",
-          "date": "08/26/2020",
-          "weight": 440,
+          "id": "2eb4eac0-ecac-11ea-8dec-5513d1e5a925",
+          "date": "09/02/2020",
+          "weight": 50,
           "chest": 0,
           "upperarm": 0,
           "thigh": 0,
           "waist": 0,
           "hips": 0,
-          "trend": true
-        },
+          "trend": false
+        }
+      ],
+      "goals": [
         {
-          "id": "5b44c190-e73f-11ea-94a0-a167c31c000f",
-          "date": "08/26/2020",
-          "weight": 67,
-          "chest": 0,
-          "upperarm": 0,
-          "thigh": 0,
-          "waist": 0,
-          "hips": 0,
-          "trend": true
-        },
-        {
-          "id": "5709aff0-e73f-11ea-94a0-a167c31c000f",
-          "date": "08/26/2020",
-          "weight": 70,
-          "chest": 0,
-          "upperarm": 0,
-          "thigh": 0,
-          "waist": 0,
-          "hips": 0,
-          "trend": true
-        },
-        {
-          "id": "7a62aa20-e739-11ea-bdbe-054823780139",
-          "date": "08/26/2020",
-          "weight": 80,
+          "id": "bc29be40-eca6-11ea-a87b-a5c8fdbe70c0",
+          "date": 0,
+          "weight": 0,
           "chest": 0,
           "upperarm": 0,
           "thigh": 0,
           "waist": 0,
           "hips": 0
         }
-      ],
-      "_locals": {}
+      ]
     },
     {
       "id": "9306b370-e719-11ea-acda-91fe8ba9e4ab",
@@ -68,6 +47,17 @@
       "startingWeight": "64",
       "assessments": [
         {
+          "id": "bb762ae0-ec94-11ea-a685-8f98c4d15c80",
+          "date": "09/01/2020",
+          "weight": 0,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "trend": false
+        },
+        {
           "id": "b36a0590-e719-11ea-acda-91fe8ba9e4ab",
           "date": "08/25/2020",
           "weight": 70,
@@ -79,7 +69,8 @@
           "comment": "",
           "comments": "67"
         }
-      ]
+      ],
+      "goals": []
     }
   ]
 }

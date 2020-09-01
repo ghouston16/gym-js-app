@@ -46,37 +46,66 @@ const trainerdashboard = {
     const member = memberStore.getMember(memberid);
     response.cookie('member', member.id);
     let trainer = request.cookies.user;
-   // const label = "Goals";
-    let add =   "";
     let list = "updateassessment";
-  //  const link = "/trainerdashboard/goals";
 
     const viewData = {
       assessment: member.assessments,
-      member : member,
+      member : member.id,
       bmi:  gymutil.bmi(member),
-      //goalstatus: gymutil.goal(member),
       idealweight: gymutil.idealweight(member),
       trainer:trainer,
-      //label: label,
       list: list,
-     // link: link,
-
     };
     response.render('trainerassessment', viewData);
   },
+ /* trainerGoals(request, response){
+    const memberId = request.params.id;
+    const member= memberStore.getMember(memberId);
+    response.cookie('member', member.id);
+    let trainer = request.cookies.user;
+    const goals = member.goals;
+    logger.debug("Member id = ", member);
+
+    const viewData = {
+      title: "Goals Dashboard",
+      member: member,
+      goals: goals,
+      bmi: gymutil.bmi(member),
+      trainer: trainer,
+      idealweight: gymutil.idealweight(member)
+    };
+    response.render("trainergoals", viewData);
+  }, */
   editComment(request,response){
     const memberId = request.cookies.member;
     const member = memberStore.getMember(memberId);
-
     const assessment = memberStore.getAssessment(request.params.id);
     const assessmentid = request.params.id;
     const comment = request.body.comment;
-
     logger.debug('Add Comment to Assessment', comment);
     memberStore.addComment(assessmentid,memberId, comment);
-    response.redirect('/trainerdashboard');
+    response.redirect('/trainerdashboard/' + memberId);
   },
+  /*
+  trainerGoal(request,response){
+   const memberId = request.cookies.member;
+   const member = memberStore.getMember(memberId);
+
+    const Goal = {
+          id: uuid.v1(),
+          date: Number(request.body.date),
+          weight: Number(request.body.weight),
+          chest: Number(request.body.chest),
+          upperarm: Number(request.body.upperarm),
+          thigh: Number(request.body.thigh),
+          waist: Number(request.body.waist),
+          hips: Number(request.body.hips),
+        };
+        logger.debug("New Goal = ", Goal);
+        memberStore.addGoal(memberId, Goal);
+        response.redirect("/trainer/:id/trainergoals");
+      },
+*/
 };
 
 module.exports = trainerdashboard;

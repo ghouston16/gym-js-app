@@ -36,6 +36,10 @@ const memberStore = {
     const test = this.store.findOneBy(this.collection, { id: id });
     return this.store.findOneBy('memberStore.assessments', { id: id });
   },
+  getGoal(id) {
+    const test = this.store.findOneBy(this.collection, { id: id });
+    return this.store.findOneBy('memberStore.goals', { id: id });
+  },
 
 
   addAssessment(id, assessment) {
@@ -43,6 +47,19 @@ const memberStore = {
     member.assessments.unshift(assessment);
     this.store.save();
   },
+
+  addGoal(id, goal) {
+    const member = this.getMember(id);
+    member.goals.unshift(goal);
+    this.store.save();
+  },
+  removeGoal(id, goalId) {
+    const member = this.getMember(id);
+    const goals = member.goals;
+    _.remove(goals, { id: goalId });
+    this.store.save();
+  },
+
   addComment(id, memberId, comment) {
     const user = this.getMember(memberId)
     const assessment = user.assessments;

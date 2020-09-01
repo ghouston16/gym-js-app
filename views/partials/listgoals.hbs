@@ -1,5 +1,4 @@
 <table class="ui celled table">
-    <a href="/dashboard/goals">
     <thead>
     <tr>
         <th>Date</th>
@@ -9,13 +8,11 @@
         <th>Thigh</th>
         <th>Waist</th>
         <th>Hips</th>
-        <th>Trend</th>
-        <th>Comment</th>
         <th>Remove</th>
     </tr>
     </thead>
     <tbody>
-    {{#each member.assessments}}
+    {{#each member.goals}}
         <tr>
             <td>
                 {{date}}
@@ -39,21 +36,11 @@
                 {{hips}}
             </td>
             <td>
-                {{#if trend}}
-                    <i class= "ui teal tag label"></i>
-                {{else}}
-                    <i class= "ui red tag label"></i>
-                {{/if}}
+                <a href="/dashboard/{{id}}/goals/deletegoal/{{id}}" class="ui icon button">
+                    <i class="icon trash"></i>
+                </a>
             </td>
-            <td>
-                {{comments}}
-            </td>
-            <td>
-          <a href="/dashboard/{{../member.id}}/deleteassessment/{{id}}" class="ui icon button">
-            <i class="icon trash"></i>
-          </a>
-        </td>
-      </tr>
+        </tr>
     {{/each}}
-  </tbody>
+    </tbody>
 </table>
