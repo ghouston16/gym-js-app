@@ -50,7 +50,7 @@ const trainerdashboard = {
 
     const viewData = {
       assessment: member.assessments,
-      member : member.id,
+      member : member,
       bmi:  gymutil.bmi(member),
       idealweight: gymutil.idealweight(member),
       trainer:trainer,
@@ -58,24 +58,22 @@ const trainerdashboard = {
     };
     response.render('trainerassessment', viewData);
   },
- /* trainerGoals(request, response){
+  trainerGoals(request, response){
     const memberId = request.params.id;
     const member= memberStore.getMember(memberId);
     response.cookie('member', member.id);
-    let trainer = request.cookies.user;
     const goals = member.goals;
-    logger.debug("Member id = ", member);
+    logger.debug("Member id = ", memberId);
 
     const viewData = {
       title: "Goals Dashboard",
       member: member,
       goals: goals,
       bmi: gymutil.bmi(member),
-      trainer: trainer,
       idealweight: gymutil.idealweight(member)
     };
     response.render("trainergoals", viewData);
-  }, */
+  },
   editComment(request,response){
     const memberId = request.cookies.member;
     const member = memberStore.getMember(memberId);
@@ -86,7 +84,7 @@ const trainerdashboard = {
     memberStore.addComment(assessmentid,memberId, comment);
     response.redirect('/trainerdashboard/' + memberId);
   },
-  /*
+
   trainerGoal(request,response){
    const memberId = request.cookies.member;
    const member = memberStore.getMember(memberId);
@@ -103,9 +101,8 @@ const trainerdashboard = {
         };
         logger.debug("New Goal = ", Goal);
         memberStore.addGoal(memberId, Goal);
-        response.redirect("/trainer/:id/trainergoals");
+        response.redirect("/trainerdashboard/" + memberId + "/trainergoals");
       },
-*/
 };
 
 module.exports = trainerdashboard;

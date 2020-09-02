@@ -1,0 +1,46 @@
+<table class="ui celled table">
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th>Weight</th>
+        <th>Chest</th>
+        <th>Arm</th>
+        <th>Thigh</th>
+        <th>Waist</th>
+        <th>Hips</th>
+        <th>Remove</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each member.goals}}
+        <tr>
+            <td>
+                {{date}}
+            </td>
+            <td>
+                {{weight}}
+            </td>
+            <td>
+                {{chest}}
+            </td>
+            <td>
+                {{upperarm}}
+            </td>
+            <td>
+                {{thigh}}
+            </td>
+            <td>
+                {{waist}}
+            </td>
+            <td>
+                {{hips}}
+            </td>
+            <td>
+                <a href="/trainerdashboard/{{member.id}}/trainergoals/deletegoal/{{id}}" class="ui icon button">
+                    <i class="icon trash"></i>
+                </a> */
+            </td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
