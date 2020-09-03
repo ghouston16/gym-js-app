@@ -11,6 +11,14 @@ const dashboard = {
     const memberId = request.params.id;
     const loggedInUser = accounts.getCurrentUser(request);
     const assessment = loggedInUser.assessments;
+    const goals = loggedInUser.goals;
+    const missed = loggedInUser.missed.length;
+    const open = loggedInUser.current.length;
+    const achieved = loggedInUser.achieved.length;
+    let status;
+    if (goals.length >= 1)
+    {status = gymutil.goalstatus(loggedInUser)}
+    else { status = "No Goal" }
     logger.debug("Member id = ", loggedInUser);
     const viewData = {
       title: "Dashboard",
@@ -18,7 +26,11 @@ const dashboard = {
       assessment: assessment,
       bmi: gymutil.bmi(loggedInUser),
       idealweight: gymutil.idealweight(loggedInUser),
-      status: gymutil.goalstatus(loggedInUser)
+      goals: goals,
+      missed: missed,
+      achieved: achieved,
+      open: open,
+     status: status
     };
     response.render("Dashboard", viewData);
   },
@@ -44,24 +56,24 @@ const dashboard = {
     let yyyy = today.getFullYear();
     today = yyyy + "/" + mm + "/" + dd;
 
-    let todaygoal = member.goals[0];
+    let currentgoal = member.goals[0];
 
-    if (todaygoal != "") {
-      if (todaygoal.weight != "" && todaygoal.weight > request.body.weight) {
-        if (todaygoal.chest != "" && todaygoal.chest > request.body.chest) {
-          if (todaygoal.thigh != "" && todaygoal.thigh > request.body.thigh) {
-            if (todaygoal.upperarm != "" && todaygoal.upperarm > request.body.upperarm) {
-              if (todaygoal.waist != "" && todaygoal.waist > request.body.waist) {
-                if (todaygoal.hips != "" && todaygoal.hips > request.body.hips) {
+    if (currentgoal != "") {
+      if (currentgoal.weight != "" && currentgoal.weight > request.body.weight) {
+        if (currentgoal.chest != "" && currentgoal.chest > request.body.chest) {
+          if (currentgoal.thigh != "" && currentgoal.thigh > request.body.thigh) {
+            if (currentgoal.upperarm != "" && currentgoal.upperarm > request.body.upperarm) {
+              if (currentgoal.waist != "" && currentgoal.waist > request.body.waist) {
+                if (currentgoal.hips != "" && currentgoal.hips > request.body.hips) {
 
                 }
               }
             }
           }
         }
-        member.achieved.unshift(todaygoal);
+        member.achieved.unshift(currentgoal);
         let status = "Achieved";
-        memberStore.updateStatus(todaygoal, status);
+        memberStore.updateStatus(currentgoal, status);
 
       }
     }
@@ -94,13 +106,14 @@ const dashboard = {
     let mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
     let yyyy = today.getFullYear();
     today = yyyy + "/" + mm + "/" + dd;
-
-    let todaygoal = member.goals[0];
-
-    if (todaygoal.status !== "Achieved") {
-      member.missed.unshift(todaygoal);
-      let status = "Missed";
-      memberStore.updateStatus(todaygoal, status);
+    if (member.goals.length >= 1) {
+      let currentgoal = member.goals[0];
+      let status = "";
+      if (currentgoal.status !== "Achieved") {
+        member.missed.unshift(currentgoal);
+        status = "Missed"
+      } else status = request.body.status
+      memberStore.updateStatus(currentgoal, status);
     }
     //TODO use moment or other tidier method for date - method from Stack-Overflow
     const newGoal = {
@@ -112,18 +125,22 @@ const dashboard = {
       thigh: Number(request.body.thigh),
       waist: Number(request.body.waist),
       hips: Number(request.body.hips),
-      status: "open"
+      status: "Open"
     };
     logger.debug("New Goal = ", newGoal);
-    member.current.clear;
-    member.current.unshift(newGoal);
     memberStore.addGoal(memberId, newGoal);
+    member.current.shift();
+    member.current.unshift(newGoal);
     response.redirect("/dashboard/" + memberId + "/goals");
   },
   goals(request, response) {
     const goalId = request.params.id;
     const loggedInUser = accounts.getCurrentUser(request);
     const goals = loggedInUser.goals;
+    let status;
+    if (loggedInUser.goals.length >= 1)
+    {status = gymutil.goalstatus(loggedInUser)}
+    else { status = "No Goal" }
     logger.debug("Member id = ", loggedInUser);
     const viewData = {
       title: "Goals Dashboard",
@@ -134,7 +151,7 @@ const dashboard = {
       achieved: gymutil.achieved(loggedInUser),
       bmi: gymutil.bmi(loggedInUser),
       idealweight: gymutil.idealweight(loggedInUser),
-      status: gymutil.goalstatus(loggedInUser)
+      status: status
     };
     response.render("goals", viewData);
   },

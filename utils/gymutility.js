@@ -3,7 +3,6 @@
 const accounts = require("../controllers/accounts");
 const dashboard = require("../controllers/trainerdashboard");
 const memberStore = require("../models/member-store");
-const moment = require("moment");
 const _ = require("lodash");
 
 const utility = {
@@ -68,8 +67,10 @@ const utility = {
     }
   },
   goalstatus(loggedInUser) {
-    let status = loggedInUser.goals[0].status;
-    return status;
+    if (loggedInUser.goals.length != null) {
+      let status = loggedInUser.goals[0].status;
+      return status;
+    } else return "No Goals"
   },
   missed(loggedInUser) {
     let missed = loggedInUser.missed.length;

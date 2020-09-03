@@ -11,7 +11,7 @@ const trainerdashboard = {
     logger.info("trainerdashboard rendering");
     const viewData = {
       title: "Dashboard",
-      members: memberStore.getAllMembers()
+      members: memberStore.getAllMembers(),
     };
     logger.info("about to render", memberStore.getAllMembers());
     response.render("trainerdashboard", viewData);
@@ -69,15 +69,24 @@ const trainerdashboard = {
     const member = memberStore.getMember(memberId);
     response.cookie("member", member.id);
     const goals = member.goals;
+    let status;
+    if (member.goals.length >= 1) {
+      status = gymutil.goalstatus(member);
+    } else {
+      status = "No Goal";
+    }
     logger.debug("Member id = ", memberId);
 
     const viewData = {
       title: "Goals Dashboard",
       member: member,
       goals: goals,
-      status: gymutil.goalstatus(member),
+      missed: gymutil.missed(member),
+      open: gymutil.open(member),
+      achieved: gymutil.achieved(member),
       bmi: gymutil.bmi(member),
-      idealweight: gymutil.idealweight(member)
+      idealweight: gymutil.idealweight(member),
+      status: status
     };
     response.render("trainergoals", viewData);
   },
@@ -95,12 +104,14 @@ const trainerdashboard = {
   trainerGoal(request, response) {
     const memberId = request.cookies.member;
     const member = memberStore.getMember(memberId);
-
-    let todaygoal = member.goals[0];
-    if (todaygoal.status !== "Achieved") {
-      member.missed.unshift(todaygoal);
-      let status = "Missed";
-      memberStore.updateStatus(todaygoal, status);
+    if (member.goals.length >= 1) {
+      let currentgoal = member.goals[0];
+      let status = "";
+      if (currentgoal.status !== "Achieved") {
+        member.missed.unshift(currentgoal);
+        status = "Missed";
+      } else status = request.body.status;
+      memberStore.updateStatus(currentgoal, status);
     }
 
     const Goal = {
@@ -112,11 +123,11 @@ const trainerdashboard = {
       thigh: Number(request.body.thigh),
       waist: Number(request.body.waist),
       hips: Number(request.body.hips),
-      status: "open"
+      status: "Open"
     };
     logger.debug("New Goal = ", Goal);
     if (member.current.length !== 0) {
-      member.current.clear;
+      member.current.shift();
       member.current.unshift(Goal);
     }
     memberStore.addGoal(memberId, Goal);

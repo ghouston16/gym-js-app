@@ -1,7 +1,12 @@
 {{>membermenu}}
 
-{{>memberstats}}
-{{>goalstats}}
+<a href="/dashboard/{{member.id}}/">
+    {{> memberstats}}
+</a>
+<a href="/dashboard/{{member.id}}/goals">
+    {{>goalstats}}
+</a>
+
 <section>
     {{> addgoal}}
     {{> listgoals}}
