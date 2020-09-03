@@ -1,21 +1,22 @@
 {{#each members}}
-<section class="ui stacked segment">
-    <h2 class="ui header">
-        {{firstName}} {{lastName}}
-    </h2>
-    <p> E-mail: {{email}} </p>
-    <p> Total Assessments: {{member.assessments.length}} <p>
-    <p>
-        <a href="/trainerdashboard/{{id}}" class="ui icon button">
-            <i class="icon folder open"></i>
+    <section class="ui stacked segment">
+        <h2 class="ui header">
+            {{firstName}} {{lastName}}
+        </h2>
+        <p> E-mail: {{email}} </p>
+        <p> Total Assessments: {{member.total}}
+        <p>
+        <p>
+            <a href="/trainerdashboard/{{id}}" class="ui icon button">
+                <i class="icon folder open"></i>
+            </a>
+        <td>
+            <a href="/dashboard/update/{{id}}" class="ui icon button">
+                <i class="pencil alternate icon"></i>
+            </a>
+        </td>
+        <a href="/trainerdashboard/deletemember/{{id}}" class="ui icon button">
+            <i class="icon trash"></i>
         </a>
-    <td>
-        <a href="/dashboard/update/{{id}}" class="ui icon button">
-            <i class="pencil alternate icon"></i>
-        </a>
-    </td>
-    <a href="/trainerdashboard/deletemember/{{id}}" class="ui icon button">
-        <i class="icon trash"></i>
-    </a>
-</section>
+    </section>
 {{/each}}

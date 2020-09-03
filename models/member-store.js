@@ -59,13 +59,6 @@ const memberStore = {
     _.remove(goals, { id: goalId });
     this.store.save();
   },
-  /*
-  updateStatus(, status){
-    const member = this.getMember(memberId)
-    this.goals.status = status;
-    this.store.save();
-  }, */
-
 
   addComment(id, memberId, comment) {
     const user = this.getMember(memberId);
@@ -93,7 +86,7 @@ const memberStore = {
   updateStatus(todaygoal, status) {
     todaygoal.status = status;
     this.store.save();
-  },
-}
+  }
+};
 
 module.exports = memberStore;

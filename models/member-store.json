@@ -10,7 +10,52 @@
       "gender": "Male",
       "height": "170",
       "startingWeight": "80",
+      "totalassessments": 2,
       "assessments": [
+        {
+          "id": "6df18500-ed9b-11ea-8d8f-d5460d8f36e5",
+          "date": "2020/0903",
+          "weight": 80,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "trend": false
+        },
+        {
+          "id": "6aa95ee0-ed9b-11ea-8d8f-d5460d8f36e5",
+          "date": "2020/0903",
+          "weight": 50,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "trend": false
+        },
+        {
+          "id": "160a8ab0-ed8e-11ea-8c1f-711a2cd81bb5",
+          "date": "2020/0903",
+          "weight": 0,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "trend": false
+        },
+        {
+          "id": "156941a0-ed8e-11ea-8c1f-711a2cd81bb5",
+          "date": "2020/0903",
+          "weight": 0,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "trend": false
+        },
         {
           "id": "8f4a0b60-ed81-11ea-ba9e-051b04b9ec75",
           "date": "2020/0903",
@@ -36,6 +81,50 @@
       ],
       "goals": [
         {
+          "id": "8651c100-ed9b-11ea-8d8f-d5460d8f36e5",
+          "date": "2020-09-15",
+          "weight": 0,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "status": "open"
+        },
+        {
+          "id": "c8abbe30-ed95-11ea-bd8e-9bfb4d6e3ba3",
+          "date": null,
+          "weight": 0,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "status": "Missed"
+        },
+        {
+          "id": "832aed40-ed95-11ea-b9cb-057aa6afe993",
+          "date": "",
+          "weight": 0,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "status": "Missed"
+        },
+        {
+          "id": "a05e2760-ed90-11ea-93e4-b1507c5f1022",
+          "date": "2020-09-04",
+          "weight": 50,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "status": "Achieved"
+        },
+        {
           "id": "f82def00-ed83-11ea-8399-d3ae3c7fe7a1",
           "date": 0,
           "weight": 0,
@@ -44,7 +133,7 @@
           "thigh": 0,
           "waist": 0,
           "hips": 0,
-          "status": "open"
+          "status": "Missed"
         },
         {
           "id": "3f639150-ed83-11ea-a074-8fa270399aa9",
@@ -77,6 +166,89 @@
           "waist": 0,
           "hips": 0,
           "status": "achieved"
+        }
+      ],
+      "missed": [
+        {
+          "id": "c8abbe30-ed95-11ea-bd8e-9bfb4d6e3ba3",
+          "date": null,
+          "weight": 0,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "status": "Missed"
+        },
+        {
+          "id": "c8abbe30-ed95-11ea-bd8e-9bfb4d6e3ba3",
+          "date": null,
+          "weight": 0,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "status": "Missed"
+        },
+        {
+          "id": "832aed40-ed95-11ea-b9cb-057aa6afe993",
+          "date": "",
+          "weight": 0,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "status": "Missed"
+        },
+        {
+          "id": "832aed40-ed95-11ea-b9cb-057aa6afe993",
+          "date": "",
+          "weight": 0,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "status": "Missed"
+        },
+        {
+          "id": "f82def00-ed83-11ea-8399-d3ae3c7fe7a1",
+          "date": 0,
+          "weight": 0,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "status": "Missed"
+        }
+      ],
+      "current": [
+        {
+          "id": "8651c100-ed9b-11ea-8d8f-d5460d8f36e5",
+          "date": "2020-09-15",
+          "weight": 0,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "status": "open"
+        }
+      ],
+      "achieved": [
+        {
+          "id": "a05e2760-ed90-11ea-93e4-b1507c5f1022",
+          "date": "2020-09-04",
+          "weight": 50,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "status": "Achieved"
         }
       ]
     },
