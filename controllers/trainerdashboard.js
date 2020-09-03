@@ -89,6 +89,12 @@ const trainerdashboard = {
    const memberId = request.cookies.member;
    const member = memberStore.getMember(memberId);
 
+    let todaygoal = member.goals[0];
+    if  (todaygoal.status !== "Achieved"){
+      let status = "Missed"
+      memberStore.updateStatus(todaygoal, status)
+    }
+
     const Goal = {
           id: uuid.v1(),
           date: Number(request.body.date),
@@ -98,6 +104,7 @@ const trainerdashboard = {
           thigh: Number(request.body.thigh),
           waist: Number(request.body.waist),
           hips: Number(request.body.hips),
+          status: "open"
         };
         logger.debug("New Goal = ", Goal);
         memberStore.addGoal(memberId, Goal);

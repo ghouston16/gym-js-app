@@ -38,7 +38,6 @@ const utility = {
             bmicategory
         };
     },
-    
     idealweight(loggedInUser, idealweight) {
 
         let weight = loggedInUser.startingWeight;
@@ -59,7 +58,7 @@ const utility = {
         } else {
             base = 45.5
         }
-        idealweight = base + 2.3 * ((height / 0.0254) - 60)
+        idealweight = base + 2.3 * ((height/100)/( 0.0254) - 60)
 
 
         if (weight <= idealweight) {
@@ -68,5 +67,9 @@ const utility = {
             return false
         }
     },
+    goalstatus(loggedInUser) {
+        let status = loggedInUser.goals[0].status;
+        return status
+    }
 };
 module.exports = utility;

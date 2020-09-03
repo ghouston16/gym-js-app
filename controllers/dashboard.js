@@ -5,6 +5,7 @@ const memberStore = require("../models/member-store");
 const uuid = require("uuid");
 const gymutil = require('../utils/gymutility.js');
 const accounts = require("./accounts.js");
+const moment = require("moment");
 
 const dashboard = {
     index(request, response) {
@@ -17,7 +18,8 @@ const dashboard = {
             member: loggedInUser,
             assessment: assessment,
             bmi: gymutil.bmi(loggedInUser),
-            idealweight: gymutil.idealweight(loggedInUser)
+            idealweight: gymutil.idealweight(loggedInUser),
+            status: gymutil.goalstatus(loggedInUser)
         };
         response.render("Dashboard", viewData);
     },
@@ -31,18 +33,43 @@ const dashboard = {
     },
 
     addAssessment(request, response) {
+        const loggedInUser = accounts.getCurrentUser(request)
         const memberId = request.params.id;
         const member = memberStore.getMember(memberId);
-        let trend = false;
+        const assessment = loggedInUser.assessments;
         //TODO use moment or other tidier method for date - method from Stack-Overflow
         let today = new Date();
+        let trend = false;
         let dd = String(today.getDate()).padStart(2, "0");
         let mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
         let yyyy = today.getFullYear();
-        today = mm + "/" + dd + "/" + yyyy;
-        if (member.assessments != null) {
-            trend = member.assessments[0] > Number(request.body.weight);
+        today = yyyy + "/" + mm + "" + dd;
+
+        let todaygoal = member.goals[0];
+
+        if (todaygoal != "") {
+            if (todaygoal.weight != "" && todaygoal.weight > request.body.weight) {
+                if (todaygoal.chest != "" && todaygoal.chest > request.body.chest) {
+                    if (todaygoal.thigh != "" && todaygoal.thigh > request.body.thigh) {
+                        if (todaygoal.upperarm != "" && todaygoal.upperarm > request.body.upperarm) {
+                            if (todaygoal.waist != "" && todaygoal.waist > request.body.waist) {
+                                if (todaygoal.hips != "" && todaygoal.hips > request.body.hips) {
+
+                                }
+                            }
+                        }
+                    }
+                }
+                let status = 'Achieved'
+                memberStore.updateStatus(todaygoal, status)
+
+            }
         }
+        if (assessment.length > 1) {
+            trend = assessment[0].weight > Number(request.body.weight)
+        }
+
+
         const newAssessment = {
             id: uuid.v1(),
             date: today,
@@ -62,16 +89,28 @@ const dashboard = {
     addGoal(request, response) {
         const memberId = request.params.id;
         const member = memberStore.getMember(memberId);
+       let today = new Date();
+        let dd = String(today.getDate()).padStart(2, "0");
+        let mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+        let yyyy = today.getFullYear();
+        today = yyyy + "/" + mm + "/" + dd;
+
+        let todaygoal = member.goals[0];
+        if  (todaygoal.status !== "Achieved"){
+            let status = "Missed"
+            memberStore.updateStatus(todaygoal, status)
+        }
         //TODO use moment or other tidier method for date - method from Stack-Overflow
         const newGoal = {
             id: uuid.v1(),
-            date: Number(request.body.date),
+            date: request.body.date,
             weight: Number(request.body.weight),
             chest: Number(request.body.chest),
             upperarm: Number(request.body.upperarm),
             thigh: Number(request.body.thigh),
             waist: Number(request.body.waist),
             hips: Number(request.body.hips),
+            status: "open"
         };
         logger.debug("New Goal = ", newGoal);
         memberStore.addGoal(memberId, newGoal);
@@ -87,7 +126,8 @@ const dashboard = {
             member: loggedInUser,
             goals: goals,
             bmi: gymutil.bmi(loggedInUser),
-            idealweight: gymutil.idealweight(loggedInUser)
+            idealweight: gymutil.idealweight(loggedInUser),
+            status: gymutil.goalstatus(loggedInUser)
         };
         response.render("goals", viewData);
     },

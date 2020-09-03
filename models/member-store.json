@@ -12,28 +12,71 @@
       "startingWeight": "80",
       "assessments": [
         {
-          "id": "2eb4eac0-ecac-11ea-8dec-5513d1e5a925",
-          "date": "09/02/2020",
-          "weight": 50,
+          "id": "8f4a0b60-ed81-11ea-ba9e-051b04b9ec75",
+          "date": "2020/0903",
+          "weight": 80,
           "chest": 0,
           "upperarm": 0,
           "thigh": 0,
           "waist": 0,
           "hips": 0,
-          "trend": false,
-          "comments": "hello"
+          "trend": true
+        },
+        {
+          "id": "b98a0b10-ed80-11ea-a014-b75ece7a9e34",
+          "date": "2020/0903",
+          "weight": 100,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "trend": false
         }
       ],
       "goals": [
         {
-          "id": "2cb73970-ecc1-11ea-9615-c3be89584e3a",
+          "id": "f82def00-ed83-11ea-8399-d3ae3c7fe7a1",
           "date": 0,
           "weight": 0,
           "chest": 0,
           "upperarm": 0,
           "thigh": 0,
           "waist": 0,
-          "hips": 0
+          "hips": 0,
+          "status": "open"
+        },
+        {
+          "id": "3f639150-ed83-11ea-a074-8fa270399aa9",
+          "date": "2020-09-14",
+          "weight": 0,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "status": "Missed"
+        },
+        {
+          "id": "dc548ea0-ed7f-11ea-91d8-ade9a184054e",
+          "date": 0,
+          "weight": 70,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "status": "Achieved"
+        },
+        {
+          "date": "2020/09/02",
+          "weight": 100,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "status": "achieved"
         }
       ]
     },

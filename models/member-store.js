@@ -34,11 +34,11 @@ const memberStore = {
   },
   getAssessment(id) {
     const test = this.store.findOneBy(this.collection, { id: id });
-    return this.store.findOneBy('memberStore.assessments', { id: id });
+    return this.store.findOneBy("memberStore.assessments", { id: id });
   },
   getGoal(id) {
     const test = this.store.findOneBy(this.collection, { id: id });
-    return this.store.findOneBy('memberStore.goals', { id: id });
+    return this.store.findOneBy("memberStore.goals", { id: id });
   },
 
 
@@ -59,11 +59,18 @@ const memberStore = {
     _.remove(goals, { id: goalId });
     this.store.save();
   },
+  /*
+  updateStatus(, status){
+    const member = this.getMember(memberId)
+    this.goals.status = status;
+    this.store.save();
+  }, */
+
 
   addComment(id, memberId, comment) {
-    const user = this.getMember(memberId)
+    const user = this.getMember(memberId);
     const assessment = user.assessments;
-    const update = assessment.map(i=> i.id).indexOf(id);
+    const update = assessment.map(i => i.id).indexOf(id);
     assessment[update].comments = comment;
     this.store.save();
   },
@@ -78,11 +85,15 @@ const memberStore = {
   getUserByEmail(email) {
     return this.store.findOneBy(this.collection, { email: email });
   },
-  updateSettings(member, update){
-      if(update.password !="") member.password = update.password;
-      if(update.address !="") member.address = update.address;
-      this.store.save();
-    },
-};
+  updateSettings(member, update) {
+    if (update.password != "") member.password = update.password;
+    if (update.address != "") member.address = update.address;
+    this.store.save();
+  },
+  updateStatus(todaygoal, status) {
+    todaygoal.status = status;
+    this.store.save();
+  },
+}
 
 module.exports = memberStore;
