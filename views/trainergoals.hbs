@@ -1,12 +1,6 @@
 {{>menu}}
-
-<a href="/trainerdashboard/{{member.id}}/">
-{{> memberstats}}
-</a>
-<a href="/trainerdashboard/{{member.id}}/trainergoals">
-{{>goalstats}}
-</a>
-<section>
+{{>trainerwidget}}
+<section class ="ui segment">
     {{> traineraddgoal}}
     {{>listgoals}}
 </section>

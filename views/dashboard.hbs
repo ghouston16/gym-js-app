@@ -1,12 +1,14 @@
 {{> membermenu}}
-<a href="/dashboard/{{member.id}}/">
-{{> memberstats}}
-</a>
-<a href="/dashboard/{{member.id}}/goals">
-    {{>goalstats}}
+<section class=" ui segment">
+    <a href="/dashboard/{{member.id}}/">
+        {{> memberstats}}
     </a>
-
-<section>
+    <p></p>
+    <a href="/dashboard/{{member.id}}/goals">
+        {{>goalstats}}
+    </a>
+</section>
+<section class="ui segment">
     {{> addassessment}}
     {{> listassessments}}
 </section>

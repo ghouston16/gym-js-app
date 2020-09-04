@@ -1,42 +1,45 @@
-<table class="ui celled table">
-    <thead>
-    <tr>
-        <th>Date</th>
-        <th>Weight</th>
-        <th>Chest</th>
-        <th>Arm</th>
-        <th>Thigh</th>
-        <th>Waist</th>
-        <th>Hips</th>
-        <th>Status</th>
-    </tr>
-    </thead>
-    <tbody>
-    {{#each member.goals}}
+<section class=" ui segment">
+    <div class="ui huge purple label"><b>Member Goal Tracker</b></div>
+    <table class="ui celled table">
+        <thead>
         <tr>
-            <td>
-                {{date}}
-            </td>
-            <td>
-                {{weight}}
-            </td>
-            <td>
-                {{chest}}
-            </td>
-            <td>
-                {{upperarm}}
-            </td>
-            <td>
-                {{thigh}}
-            </td>
-            <td>
-                {{waist}}
-            </td>
-            <td>
-                {{hips}}
-            </td>
-            <td>{{status}}</td>
+            <th>Date</th>
+            <th>Weight</th>
+            <th>Chest</th>
+            <th>Arm</th>
+            <th>Thigh</th>
+            <th>Waist</th>
+            <th>Hips</th>
+            <th>Status</th>
         </tr>
-    {{/each}}
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        {{#each member.goals}}
+            <tr>
+                <td>
+                    {{date}}
+                </td>
+                <td>
+                    {{weight}}
+                </td>
+                <td>
+                    {{chest}}
+                </td>
+                <td>
+                    {{upperarm}}
+                </td>
+                <td>
+                    {{thigh}}
+                </td>
+                <td>
+                    {{waist}}
+                </td>
+                <td>
+                    {{hips}}
+                </td>
+                <td>{{status}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</section>

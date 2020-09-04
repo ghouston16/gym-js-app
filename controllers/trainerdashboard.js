@@ -11,7 +11,7 @@ const trainerdashboard = {
     logger.info("trainerdashboard rendering");
     const viewData = {
       title: "Dashboard",
-      members: memberStore.getAllMembers(),
+      members: memberStore.getAllMembers()
     };
     logger.info("about to render", memberStore.getAllMembers());
     response.render("trainerdashboard", viewData);
@@ -52,15 +52,24 @@ const trainerdashboard = {
     response.cookie("member", member.id);
     let trainer = request.cookies.user;
     let list = "updateassessment";
-
+   let status = gymutil.goalstatus(member)
+    const missed = member.missed.length;
+    const open = member.current.length;
+    const achieved = member.achieved.length;
+    let goals = member.goals;
     const viewData = {
+      title: "Trainer Review Dash",
       assessment: member.assessments,
       member: member,
       bmi: gymutil.bmi(member),
-      status: gymutil.goalstatus(member),
       idealweight: gymutil.idealweight(member),
       trainer: trainer,
-      list: list
+      list: list,
+      goals: goals,
+      missed: missed,
+      achieved: achieved,
+      open: open,
+      status: status
     };
     response.render("trainerassessment", viewData);
   },

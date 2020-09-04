@@ -1,39 +1,41 @@
-<section class="ui raised segment stackable five column grid">
-    <div class="column center aligned">
-        <h2 class="ui icon header">
-            <i class="blue user icon"></i>
-            <div class="sub header"><b>{{member.firstName}} {{member.lastName}}</b></div>
-        </h2>
-    </div>
-    <div class="column center aligned">
-        <h2 class="ui icon header">
-            <i class="heartbeat red icon"></i>
-            <div class="sub header"><b>BMI: {{bmi.bmi}}</b></div>
-        </h2>
-    </div>
-    <div class="column center aligned">
-        <h2 class="ui icon header">
-            <i class="green plus icon"></i>
-            <div class="sub header"><b>{{bmi.bmicategory}}</b></div>
-        </h2>
-    </div>
-    <div class="column center aligned">
-        <h2 class="ui icon header">
-            <i class="huge blue bullseye icon"></i>
-            <div class="sub header"><b> Goal Status:</b>
-            <b>{{status}}</b></div>
-        </h2>
-    </div>
-    <div class="column center aligned">
-        <h2 class="ui icon header">
-            {{#if idealweight}}
-                <i class="huge green balance scale icon"></i>
-            {{else}}
-                <i class="huge red balance scale icon"></i>
-            {{/if}}
-            <div class="sub header"><b>Ideal Weight Indicator</b></div>
-        </h2>
-    </div>
+<section class=" ui segment">
+    <div class="ui huge purple label"><b>Member Fitness Stats</b></div>
+    <section class="ui raised segment stackable five column grid">
+        <div class="column center aligned">
+            <h2 class="ui icon header">
+                <i class="blue user icon"></i>
+                <div class="sub header"><b>{{member.firstName}} {{member.lastName}}</b></div>
+            </h2>
+        </div>
+        <div class="column center aligned">
+            <h2 class="ui icon header">
+                <i class="heartbeat red icon"></i>
+                <div class="sub header"><b>BMI: {{bmi.bmi}}</b></div>
+            </h2>
+        </div>
+        <div class="column center aligned">
+            <h2 class="ui icon header">
+                <i class="green plus icon"></i>
+                <div class="sub header"><b>{{bmi.bmicategory}}</b></div>
+            </h2>
+        </div>
+        <div class="column center aligned">
+            <h2 class="ui icon header">
+                <i class="huge blue bullseye icon"></i>
+                <div class="sub header"><b> Goal Status:</b>
+                    <b>{{status}}</b></div>
+            </h2>
+        </div>
+        <div class="column center aligned">
+            <h2 class="ui icon header">
+                {{#if idealweight}}
+                    <i class="huge green balance scale icon"></i>
+                {{else}}
+                    <i class="huge red balance scale icon"></i>
+                {{/if}}
+                <div class="sub header"><b>Ideal Weight Indicator</b></div>
+            </h2>
+        </div>
+    </section>
 </section>
-</a>
-</a>
+

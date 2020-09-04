@@ -1,55 +1,56 @@
 {{> menu}}
-{{> memberstats}}
+{{> trainerwidget}}
+<section class=" ui segment">
+    <div class="ui huge purple label"><b>Trainer Assessment Reviewer</b></div>
+    {{#each assessment}}
+    <section class=" ui segment">
+        <table class="ui celled table">
+            <thead>
+            <th>Weight</th>
+            <th>Chest</th>
+            <th>Thigh</th>
+            <th>Upper Arm</th>
+            <th>Waist</th>
+            <th>Hips</th>
+            <th>Comments</th>
+            </thead>
+            <tbody>
 
-{{#each assessment}}
-    <table class="ui celled table">
-        <thead>
-        <th>Weight</th>
-        <th>Chest</th>
-        <th>Thigh</th>
-        <th>Upper Arm</th>
-        <th>Waist</th>
-        <th>Hips</th>
-        <th>Comments</th>
-        </thead>
-        <tbody>
+            <tr>
+                <td>
+                    {{weight}}
+                </td>
+                <td>
+                    {{chest}}
+                </td>
+                <td>
+                    {{thigh}}
+                </td>
+                <td>
+                    {{upperarm}}
+                </td>
+                <td>
+                    {{waist}}
+                </td>
+                <td>
+                    {{hips}}
+                </td>
+                <td>
+                    {{comments}}
+                </td>
+            </tr>
 
-        <tr>
-            <td>
-                {{weight}}
-            </td>
-            <td>
-                {{chest}}
-            </td>
-            <td>
-                {{thigh}}
-            </td>
-            <td>
-                {{upperarm}}
-            </td>
-            <td>
-                {{waist}}
-            </td>
-            <td>
-                {{hips}}
-            </td>
-            <td>
-                {{comments}}
-            </td>
-        </tr>
-
-        </tbody>
-    </table>
-    <h4 class="ui headder">
-        Comments
-    </h4>
-    <form class="ui form" action="/editcomment/{{id}}" method="POST">
-        <div class="ui field">
-            <textarea rows="2" name="comment"></textarea>
-        </div>
-        <button class="ui blue submit button"> Update</button>
-    </form>
-
-
-{{/each}}
-
+            </tbody>
+        </table>
+        <h4 class="ui headder">
+            Comments
+        </h4>
+        <form class="ui form" action="/editcomment/{{id}}" method="POST">
+            <div class="ui field">
+                <textarea rows="2" name="comment"></textarea>
+            </div>
+            <button class="ui blue submit button"> Update</button>
+        </form>
+    </section>
+    {{/each}}
+</section>

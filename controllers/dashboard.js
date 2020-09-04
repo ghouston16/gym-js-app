@@ -16,9 +16,11 @@ const dashboard = {
     const open = loggedInUser.current.length;
     const achieved = loggedInUser.achieved.length;
     let status;
-    if (goals.length >= 1)
-    {status = gymutil.goalstatus(loggedInUser)}
-    else { status = "No Goal" }
+    if (goals.length >= 1) {
+      status = gymutil.goalstatus(loggedInUser);
+    } else {
+      status = "No Goal";
+    }
     logger.debug("Member id = ", loggedInUser);
     const viewData = {
       title: "Dashboard",
@@ -30,7 +32,7 @@ const dashboard = {
       missed: missed,
       achieved: achieved,
       open: open,
-     status: status
+      status: status
     };
     response.render("Dashboard", viewData);
   },
@@ -111,8 +113,8 @@ const dashboard = {
       let status = "";
       if (currentgoal.status !== "Achieved") {
         member.missed.unshift(currentgoal);
-        status = "Missed"
-      } else status = request.body.status
+        status = "Missed";
+      } else status = request.body.status;
       memberStore.updateStatus(currentgoal, status);
     }
     //TODO use moment or other tidier method for date - method from Stack-Overflow
@@ -138,9 +140,11 @@ const dashboard = {
     const loggedInUser = accounts.getCurrentUser(request);
     const goals = loggedInUser.goals;
     let status;
-    if (loggedInUser.goals.length >= 1)
-    {status = gymutil.goalstatus(loggedInUser)}
-    else { status = "No Goal" }
+    if (loggedInUser.goals.length >= 1) {
+      status = gymutil.goalstatus(loggedInUser);
+    } else {
+      status = "No Goal";
+    }
     logger.debug("Member id = ", loggedInUser);
     const viewData = {
       title: "Goals Dashboard",
