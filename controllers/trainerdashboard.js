@@ -52,7 +52,7 @@ const trainerdashboard = {
     response.cookie("member", member.id);
     let trainer = request.cookies.user;
     let list = "updateassessment";
-   let status = gymutil.goalstatus(member)
+    let status = gymutil.goalstatus(member);
     const missed = member.missed.length;
     const open = member.current.length;
     const achieved = member.achieved.length;
@@ -125,7 +125,7 @@ const trainerdashboard = {
 
     const Goal = {
       id: uuid.v1(),
-      date: Number(request.body.date),
+      date: request.body.date,
       weight: Number(request.body.weight),
       chest: Number(request.body.chest),
       upperarm: Number(request.body.upperarm),

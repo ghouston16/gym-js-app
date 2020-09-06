@@ -1,34 +1,35 @@
 <section class=" center aligned ui segment">
-    <div class="middle aligned ui huge purple label"><b>Log your Assessment Progess</b></div>
-    <form class="ui segment form" action="/dashboard/{{member.id}}/addassessment" method="POST">
-        <div class="two fields">
-            <div class="field">
-                <label>Weight (kg)</label>
-                <input placeholder="00.00kg" type="text" name="weight">
-            </div>
-            <div class="field">
-                <label>Chest (cm)</label>
-                <input placeholder="00.00cm" type="text" name="chest">
-            </div>
-            <div class="field">
-                <label>Thigh (cm)</label>
-                <input placeholder="00.00cm" type="text" name="thigh">
-            </div>
-        </div>
-        <div class="three fields">
-            <div class="field">
-                <label>Upper Arm (cm)</label>
-                <input placeholder="00.00cm" type="text" name="upperarm">
-            </div>
-            <div class="field">
-                <label>Waist (cm)</label>
-                <input placeholder="00.00cm" type="text" name="waist">
-            </div>
-            <div class="field">
-                <label>Hips (cm)</label>
-                <input placeholder="00.00cm" type="text" name="hips">
-            </div>
-        </div>
-        <button class="ui blue submit button"> Add Assessment</button>
-    </form>
+    <div class="middle aligned ui huge purple label"><b>Log your Assessment
+        Progess: {{member.firstNAme}} {{member.lastName}}</b></div>
 </section>
+<form class="ui segment form" action="/dashboard/{{member.id}}/addassessment" method="POST">
+    <div class="two fields">
+        <div class="field">
+            <label>Weight (kg)</label>
+            <input placeholder="00.00kg" type="text" name="weight">
+        </div>
+        <div class="field">
+            <label>Chest (cm)</label>
+            <input placeholder="00.00cm" type="text" name="chest">
+        </div>
+        <div class="field">
+            <label>Thigh (cm)</label>
+            <input placeholder="00.00cm" type="text" name="thigh">
+        </div>
+    </div>
+    <div class="three fields">
+        <div class="field">
+            <label>Upper Arm (cm)</label>
+            <input placeholder="00.00cm" type="text" name="upperarm">
+        </div>
+        <div class="field">
+            <label>Waist (cm)</label>
+            <input placeholder="00.00cm" type="text" name="waist">
+        </div>
+        <div class="field">
+            <label>Hips (cm)</label>
+            <input placeholder="00.00cm" type="text" name="hips">
+        </div>
+    </div>
+    <button class="ui blue submit button"> Add Assessment</button>
+</form>

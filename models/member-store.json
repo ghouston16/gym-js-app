@@ -11,15 +11,35 @@
       "height": "170",
       "startingWeight": "80",
       "assessments": [
+        {
+          "id": "01026900-f070-11ea-bd14-e9c6f1d9a3d8",
+          "date": "2020/09/06",
+          "weight": 77,
+          "chest": 90,
+          "upperarm": 14,
+          "thigh": 35,
+          "waist": 80,
+          "hips": 85,
+          "trend": true,
+          "comments": ""
+        }
       ],
       "goals": [
+        {
+          "id": "22d13200-f070-11ea-bd14-e9c6f1d9a3d8",
+          "date": "2020-09-07",
+          "weight": 75,
+          "chest": 0,
+          "upperarm": 0,
+          "thigh": 0,
+          "waist": 0,
+          "hips": 0,
+          "status": "Open"
+        }
       ],
-      "missed": [
-      ],
-      "current": [
-      ],
-      "achieved": [
-      ]
+      "missed": [],
+      "current": [],
+      "achieved": []
     },
     {
       "id": "bb8c63f0-edf2-11ea-a5f9-d3f837033fa8",
@@ -31,13 +51,22 @@
       "height": "180",
       "startingWeight": "90",
       "assessments": [
+        {
+          "id": "3e9007b0-f083-11ea-aa7c-e3648445a033",
+          "date": "2020/09/06",
+          "weight": 85,
+          "chest": 67,
+          "upperarm": 25,
+          "thigh": 35,
+          "waist": 85,
+          "hips": 90,
+          "comments": "",
+          "trend": true
+        }
       ],
-      "goals": [
-      ],
-      "missed": [
-      ],
-      "current": [
-      ],
+      "goals": [],
+      "missed": [],
+      "current": [],
       "achieved": []
     }
   ]

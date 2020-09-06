@@ -83,7 +83,7 @@ const dashboard = {
 
     if (assessment.length > 1) {
       trend = assessment[0].weight > Number(request.body.weight);
-    } else if (assessment.length <1 ) {
+    } else if (assessment.length < 1) {
       trend = member.startingWeight > Number(request.body.weight);
     }
 

@@ -1,15 +1,15 @@
 {{> welcomemenu id='login' }}
-<section class = "ui center aligned segment">
-        <div class="ui huge purple label"><h3>Login to View your Profile</h3></div>
-    </section>
+<section class="ui center aligned segment">
+    <div class="ui huge purple label"><h3>Login to View your Profile</h3></div>
+</section>
 <section>
-<form class="ui stacked segment form" action="/authenticate" method="POST">
-    <div class="field">
-        <label>Email</label> <input placeholder="Email" name="email">
-    </div>
-    <div class="field">
-        <label>Password</label> <input type="password" name="password">
-    </div>
-    <button class="ui blue submit button">Login</button>
-</form>
+    <form class="ui stacked segment form" action="/authenticate" method="POST">
+        <div class="field">
+            <label>Email</label> <input placeholder="Email" name="email">
+        </div>
+        <div class="field">
+            <label>Password</label> <input type="password" name="password">
+        </div>
+        <button class="ui blue submit button">Login</button>
+    </form>
 </section>

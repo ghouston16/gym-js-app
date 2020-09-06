@@ -1,61 +1,62 @@
- <section class=" center aligned ui segment">
-     <div class = "ui huge purple label"><b>Member Assessment History: {{member.firstName}} {{member.lastName}}</b></div>
-    <table class="ui celled table">
-        <thead>
+<section class=" center aligned ui segment">
+    <div class="ui huge purple label"><b>Member Assessment History: {{member.firstName}} {{member.lastName}}</b></div>
+</section>
+<table class="ui celled table">
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th>Weight (kg)</th>
+        <th>Chest (cm)</th>
+        <th>Arm (cm)</th>
+        <th>Thigh (cm)</th>
+        <th>Waist (cm)</th>
+        <th>Hips (cm)</th>
+        <th>Trend</th>
+        <th>Comment</th>
+        <th>Remove</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each member.assessments}}
         <tr>
-            <th>Date</th>
-            <th>Weight (kg)</th>
-            <th>Chest (cm)</th>
-            <th>Arm (cm)</th>
-            <th>Thigh (cm)</th>
-            <th>Waist (cm)</th>
-            <th>Hips (cm)</th>
-            <th>Trend</th>
-            <th>Comment</th>
-            <th>Remove</th>
+            <td>
+                {{date}}
+            </td>
+            <td>
+                {{weight}}
+            </td>
+            <td>
+                {{chest}}
+            </td>
+            <td>
+                {{upperarm}}
+            </td>
+            <td>
+                {{thigh}}
+            </td>
+            <td>
+                {{waist}}
+            </td>
+            <td>
+                {{hips}}
+            </td>
+            <td>
+                {{#if trend}}
+                    <i class="ui green tag label"></i>
+                {{else}}
+                    <i class="ui red tag label"></i>
+                {{/if}}
+            </td>
+            <td>
+                {{comments}}
+            </td>
+            <td>
+                <a href="/dashboard/{{../member.id}}/deleteassessment/{{id}}" class="ui icon button">
+                    <i class="icon trash"></i>
+                </a>
+            </td>
         </tr>
-        </thead>
-        <tbody>
-        {{#each member.assessments}}
-            <tr>
-                <td>
-                    {{date}}
-                </td>
-                <td>
-                    {{weight}}
-                </td>
-                <td>
-                    {{chest}}
-                </td>
-                <td>
-                    {{upperarm}}
-                </td>
-                <td>
-                    {{thigh}}
-                </td>
-                <td>
-                    {{waist}}
-                </td>
-                <td>
-                    {{hips}}
-                </td>
-                <td>
-                    {{#if trend}}
-                        <i class="ui green tag label"></i>
-                    {{else}}
-                        <i class="ui red tag label"></i>
-                    {{/if}}
-                </td>
-                <td>
-                    {{comments}}
-                </td>
-                <td>
-                    <a href="/dashboard/{{../member.id}}/deleteassessment/{{id}}" class="ui icon button">
-                        <i class="icon trash"></i>
-                    </a>
-                </td>
-            </tr>
-        {{/each}}
-        </tbody>
-    </table>
+    {{/each}}
+    </tbody>
+</table>
 </section>

@@ -67,10 +67,13 @@ const utility = {
     }
   },
   goalstatus(loggedInUser) {
-    if (loggedInUser.goals.length != null) {
+    if (loggedInUser.goals.length !== 0) {
       let status = loggedInUser.goals[0].status;
       return status;
-    } else return "No Goals";
+    } else {
+      let status = "No Goal";
+      return status;
+    }
   },
   missed(loggedInUser) {
     let missed = loggedInUser.missed.length;

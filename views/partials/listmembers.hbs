@@ -1,27 +1,27 @@
-
-<section class="ui cards">
-
-{{#each members}}
+<section class="ui four column cards list">
+    {{#each members}}
         <div class="ui card">
-        <h2 class="ui center aligned header">
-            {{firstName}} {{lastName}}
-        </h2>
-            <h3> E-mail: {{email}} </h3>
-            <h3> Total Assessments: {{member.total}} <h3></h3>
-        <p>
-        <p>
-            <a href="/trainerdashboard/{{id}}" class="ui icon button">
-                <i class="icon folder open"></i>
-            </a>
-        <td>
-            <a href="/dashboard/update/{{id}}" class="ui icon button">
-                <i class="pencil alternate icon"></i>
-        </a>
-        </td>
-        <a href="/trainerdashboard/deletemember/{{id}}" class="ui icon button">
-            <i class="icon trash"></i>
-        </a>
+            <section class="center aligned ui segment">
+                <div class="center aligned ui icon">
+                    <i class="huge purple user icon"> </i>
+                </div>
+                <section class="center aligned ui segment">
+                    <p>Name: {{firstName}} {{lastName}}
+                    <p> E-mail: {{email}} </p>
+                    <p> Total Assessments: {{assessments.length}} </p>
+                    <p>
+                        <a href="/trainerdashboard/{{id}}" class="ui icon button">
+                            <i class="icon folder open"></i>
+                        </a>
+                        <a href="/trainerdashboard/deletemember/{{id}}" class="ui icon button">
+                            <i class="icon trash"></i>
+                        </a>
+                    </p>
+                </section>
+            </section>
         </div>
-    </div>
-{{/each}}
+    {{/each}}
 </section>
+
+
+
