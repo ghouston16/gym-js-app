@@ -2,58 +2,59 @@
 {{> trainermemberstats}}
 
 <section class=" center aligned ui segment">
-    <div class="middle aligned ui huge purple label"><b>Leave Trainer Feedback and Comments on {{member.firstName}}'s Assessment Progess</b></div>
+    <div class="middle aligned ui huge purple label"><b>Leave Trainer Feedback and Comments on {{member.firstName}}'s
+        Assessment Progess</b></div>
     {{#each assessment}}
-    <section class=" ui segment">
-        <table class="ui celled table">
-            <thead>
-            <th>Date</th>
-            <th>Weight</th>
-            <th>Chest</th>
-            <th>Thigh</th>
-            <th>Upper Arm</th>
-            <th>Waist</th>
-            <th>Hips</th>
-            <th>Comments</th>
-            </thead>
-            <tbody>
+        <section class=" ui segment">
+            <table class="ui celled table">
+                <thead>
+                <th>Date</th>
+                <th>Weight</th>
+                <th>Chest</th>
+                <th>Thigh</th>
+                <th>Upper Arm</th>
+                <th>Waist</th>
+                <th>Hips</th>
+                <th>Comments</th>
+                </thead>
+                <tbody>
 
-            <tr>
-                <td>{{date}}</td>
-                <td>
-                    {{weight}}
-                </td>
-                <td>
-                    {{chest}}
-                </td>
-                <td>
-                    {{thigh}}
-                </td>
-                <td>
-                    {{upperarm}}
-                </td>
-                <td>
-                    {{waist}}
-                </td>
-                <td>
-                    {{hips}}
-                </td>
-                <td>
-                    {{comments}}
-                </td>
-            </tr>
+                <tr>
+                    <td>{{date}}</td>
+                    <td>
+                        {{weight}}
+                    </td>
+                    <td>
+                        {{chest}}
+                    </td>
+                    <td>
+                        {{thigh}}
+                    </td>
+                    <td>
+                        {{upperarm}}
+                    </td>
+                    <td>
+                        {{waist}}
+                    </td>
+                    <td>
+                        {{hips}}
+                    </td>
+                    <td>
+                        {{comments}}
+                    </td>
+                </tr>
 
-            </tbody>
-        </table>
-        <h4 class="ui headder">
-            Comments
-        </h4>
-        <form class="ui form" action="/editcomment/{{id}}" method="POST">
-            <div class="ui field">
-                <textarea rows="2" name="comment"></textarea>
-            </div>
-            <button class="ui blue submit button"> Update</button>
-        </form>
-    </section>
+                </tbody>
+            </table>
+            <h4 class="ui headder">
+                Comments
+            </h4>
+            <form class="ui form" action="/editcomment/{{id}}" method="POST">
+                <div class="ui field">
+                    <textarea rows="2" name="comment"></textarea>
+                </div>
+                <button class="ui blue submit button"> Update</button>
+            </form>
+        </section>
     {{/each}}
 </section>
