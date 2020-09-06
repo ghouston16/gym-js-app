@@ -23,8 +23,7 @@ router.get("/trainerdashboard/deletemember/:id", trainerdashboard.deleteMember);
 router.post("/trainerdashboard/addmember", trainerdashboard.addMember);
 router.get("/trainerdashboard/:id", trainerdashboard.trainerAssessment);
 router.get("/trainerdashboard/:id/trainergoals", trainerdashboard.trainerGoals);
-router.post("/trainerdashboard/:id/addgoal", trainerdashboard.trainerGoal);
-//router.get("/trainerdashboard/:id/trainergoals/deletegoal/:goalid", trainerdashboard.deleteGoal);
+router.post("/trainerdashboard/:id/addgoal", trainerdashboard.trainerGoal);;
 router.post("/editcomment/:id", trainerdashboard.editComment);
 router.post("/member/updatesettings/:id", dashboard.update);
 

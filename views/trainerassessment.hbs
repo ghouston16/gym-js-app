@@ -1,17 +1,19 @@
 {{> menu}}
-{{> trainerwidget}}
-<section class=" ui segment">
-    <div class="ui huge purple label"><b>Trainer Assessment Reviewer</b></div>
+{{> trainermemberstats}}
+
+<section class=" center aligned ui segment">
+    <div class="middle aligned ui huge purple label"><b>Leave Trainer Feedback and Comments on {{member.firstName}}'s Assessment Progess</b></div>
     {{#each assessment}}
     <section class=" ui segment">
         <table class="ui celled table">
             <thead>
             <th>Weight</th>
-            <th>Chest</th>
-            <th>Thigh</th>
-            <th>Upper Arm</th>
-            <th>Waist</th>
-            <th>Hips</th>
+            <th>Weight (kg)</th>
+            <th>Chest (cm)</th>
+            <th>Arm (cm)</th>
+            <th>Thigh (cm)</th>
+            <th>Waist (cm)</th>
+            <th>Hips (cm)</th>
             <th>Comments</th>
             </thead>
             <tbody>

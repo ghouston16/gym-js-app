@@ -58,29 +58,33 @@ const dashboard = {
     let yyyy = today.getFullYear();
     today = yyyy + "/" + mm + "/" + dd;
 
-    let currentgoal = member.goals[0];
+    if (member.goals.length !== 0) {
+      let currentgoal = member.goals[0];
 
-    if (currentgoal != "") {
-      if (currentgoal.weight != "" && currentgoal.weight > request.body.weight) {
-        if (currentgoal.chest != "" && currentgoal.chest > request.body.chest) {
-          if (currentgoal.thigh != "" && currentgoal.thigh > request.body.thigh) {
-            if (currentgoal.upperarm != "" && currentgoal.upperarm > request.body.upperarm) {
-              if (currentgoal.waist != "" && currentgoal.waist > request.body.waist) {
-                if (currentgoal.hips != "" && currentgoal.hips > request.body.hips) {
-
+      if (currentgoal != "") {
+        if (currentgoal.weight != "" && currentgoal.weight > request.body.weight) {
+          if (currentgoal.chest != "" && currentgoal.chest > request.body.chest) {
+            if (currentgoal.thigh != "" && currentgoal.thigh > request.body.thigh) {
+              if (currentgoal.upperarm != "" && currentgoal.upperarm > request.body.upperarm) {
+                if (currentgoal.waist != "" && currentgoal.waist > request.body.waist) {
+                  if (currentgoal.hips != "" && currentgoal.hips > request.body.hips) {
+                  }
                 }
               }
             }
           }
+          member.achieved.unshift(currentgoal);
+          let status = "Achieved";
+          memberStore.updateStatus(currentgoal, status);
         }
-        member.achieved.unshift(currentgoal);
-        let status = "Achieved";
-        memberStore.updateStatus(currentgoal, status);
-
       }
     }
+
+
     if (assessment.length > 1) {
       trend = assessment[0].weight > Number(request.body.weight);
+    } else if (assessment.length <1 ) {
+      trend = member.startingWeight > Number(request.body.weight);
     }
 
 
@@ -117,7 +121,6 @@ const dashboard = {
       } else status = request.body.status;
       memberStore.updateStatus(currentgoal, status);
     }
-    //TODO use moment or other tidier method for date - method from Stack-Overflow
     const newGoal = {
       id: uuid.v1(),
       date: request.body.date,
