@@ -34,7 +34,7 @@ const dashboard = {
       open: open,
       status: status
     };
-    response.render("Dashboard", viewData);
+    response.render("dashboard", viewData);
   },
 
   deleteAssessment(request, response) {
