@@ -52,10 +52,10 @@ Email: homer@simpson.com
 Password: secret
 
 Software Used
-Node.js
-WebStorm
-Semantic-UI
-Dateformat-NPM-Plugin
+* Node.js
+* WebStorm
+* Semantic-UI
+* Dateformat-NPM-Plugin
 
 Installation
 * To run this application simply create an account at https://glitch.com and import the project from the repository https://github.com/ghouston16/gym-js-app/
