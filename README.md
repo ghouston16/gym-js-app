@@ -3,10 +3,10 @@ Welcome to GymJsApp
 A Gym Web App
 Node and Javascript based
 
-Description:
+### Description:
 This project is a revised and improved version of the previous PlayGym project. It has all the features of the original project along with some major additions that make it more robust and useful to a member's fitness.
 
-Functionality:
+### Functionality:
 
 * Signup & Login
     * New members can register for an account
@@ -30,7 +30,7 @@ Functionality:
      * Goal Missed/Achieved/Open
      * Ideal Weight based on height and gender.
     
-Preloaded Accounts:
+### Preloaded Accounts:
 The project is preloaded with member and trainer information.
 
 Member Test Login Info:
@@ -51,15 +51,16 @@ Password: secret
 Email: homer@simpson.com
 Password: secret
 
-Software Used
+### Software Used
 * Node.js
 * WebStorm
 * Semantic-UI
 * Dateformat-NPM-Plugin
 
-Installation
+### Installation
 * To run this application simply create an account at https://glitch.com and import the project from the repository https://github.com/ghouston16/gym-js-app/
 * Once imported you will have your own independently deployed verison of the appliction
 * Alternatively the project is visible here: https://dust-sudsy-cuticle.glitch.me
-Author
+
+### Author
 Gary Houston (ghouston16)
