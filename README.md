@@ -1,12 +1,9 @@
-Welcome to the PlayGym
+Welcome to GymJsApp
 =========================
-
 A Gym Web App
 Node and Javascript based
 
 ##Description:
-
-Description:
 This project is a revised and improved version of the previous PlayGym project. It has all the features of the original project along with some major additions that make it more robust and useful to a member's fitness.
 
 Functionality:
